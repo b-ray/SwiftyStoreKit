@@ -128,6 +128,9 @@ class PaymentQueueController: NSObject, SKPaymentTransactionObserver {
             skPayment.simulatesAskToBuyInSandbox = payment.simulatesAskToBuyInSandbox
         }
 #endif
+        if #available(iOS 12.2, *) {
+          skPayment.paymentDiscount = payment.discountOffer as? SKPaymentDiscount
+        }
 
         paymentQueue.add(skPayment)
 

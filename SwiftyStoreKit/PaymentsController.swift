@@ -31,6 +31,7 @@ struct Payment: Hashable {
     let atomically: Bool
     let applicationUsername: String
     let simulatesAskToBuyInSandbox: Bool
+    let discountOffer: Any?
     let callback: (TransactionResult) -> Void
 
     func hash(into hasher: inout Hasher) {
